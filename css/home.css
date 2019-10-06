@@ -17,7 +17,6 @@ html::-webkit-scrollbar-thumb {
 
 body {
   font-family: 'frt', sans-serif;
-  direction: rtl;
 }
 
 * {
@@ -286,11 +285,11 @@ html[dir="ltr"] .sideNav.origin {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 14px;
-  color: #fff;
+  color: #3C3C3C;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #3C3C3C;
+  background-color: #f5cd56;
 }
 
 .sideNav .options .close1 {
@@ -298,7 +297,7 @@ html[dir="ltr"] .sideNav.origin {
   display: -ms-flexbox;
   display: flex;
   font-size: 18px;
-  color: #3C3C3C;
+  color: #f5cd56;
   cursor: pointer;
 }
 
@@ -525,6 +524,20 @@ html[dir="ltr"] .up .lang .social a:not(:last-child) {
 .navbar {
   padding: 15px 0;
   margin-bottom: 0;
+}
+
+.navbar .logo .mob-logo {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .navbar .logo .mob-logo {
+    display: block;
+    margin: auto;
+  }
+  .navbar .logo .disk-logo {
+    display: none;
+  }
 }
 
 .navbar .content {
@@ -776,8 +789,14 @@ html[dir="ltr"] .navbar .options > div:not(:last-child) {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  color: #0872C4;
+  color: #f77a7a;
   cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.navbar .options > div.search .search_in > i:hover {
+  color: rgba(247, 122, 122, 0.8);
 }
 
 .navbar .options > div.search .search_in .srch {
@@ -829,18 +848,23 @@ html[dir="ltr"] .navbar .options > div:not(:last-child) {
           transform: translateY(-50%);
   left: 20px;
   z-index: 9;
-  color: #0872C4;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .navbar .options > div.search .search_in .srch button i {
-  color: currentColor;
+  color: #0872C4;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 html[dir="ltr"] .navbar .options > div.search .search_in .srch button {
   left: unset;
   right: 20px;
+}
+
+.navbar .options > div.search .search_in .srch button:hover i {
+  color: #3C3C3C;
 }
 
 .navbar .options > div.search .search_in.open {
@@ -1358,6 +1382,10 @@ html[dir="ltr"] .product .top {
   cursor: pointer;
 }
 
+html[dir="ltr"] .product .pic .cart {
+  direction: ltr;
+}
+
 .product .pic .cart span {
   font-family: "frtBold";
   font-size: 14px;
@@ -1367,6 +1395,11 @@ html[dir="ltr"] .product .top {
 .product .pic .cart i {
   color: currentColor;
   margin-left: 10px;
+}
+
+html[dir="ltr"] .product .pic .cart i {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
 .product .detail {
